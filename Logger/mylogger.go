@@ -11,6 +11,14 @@ import (
 //日志级别
 type LogLevel uint16
 
+type Logger interface {
+	Debug(msg string, arg ...interface{})
+	Info(msg string, arg ...interface{})
+	Warning(msg string, arg ...interface{})
+	Error(msg string, arg ...interface{})
+	Fatal(msg string, arg ...interface{})
+}
+
 const (
 	UNKNOWN LogLevel = iota
 	DEBUG
